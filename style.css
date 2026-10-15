@@ -1,0 +1,330 @@
+/* Styling Setup with Clean Light/Dark Mode */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #1a1a1e;
+    --text-color: #e6dfd5;
+    --nav-bg: #121215;
+    --card-bg: #222228;
+    --accent-color: #d97706; /* Warm Amber Accent */
+    --border-color: #3f3f46;
+    --font-heading: 'VT323', monospace;
+    --font-body: 'Share Tech Mono', monospace;
+}
+
+/* Light Mode Theme Overrides */
+body.light-mode {
+    --bg-color: #f4f4f6;
+    --text-color: #1f2937;
+    --nav-bg: #ffffff;
+    --card-bg: #ffffff;
+    --accent-color: #2563eb; /* Professional Blue Accent for Light Mode */
+    --border-color: #d1d5db;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header & Navigation */
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--nav-bg);
+    border-bottom: 2px solid var(--accent-color);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.brand {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.theme-btn:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.avatar-frame {
+    display: inline-block;
+    padding: 4px;
+    border: 2px solid var(--accent-color);
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-section h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    letter-spacing: 1.5px;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.bio {
+    font-size: 1.15rem;
+    opacity: 0.85;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1rem;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    margin-bottom: 2.5rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* Window Card Styling */
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.card-header {
+    background-color: var(--nav-bg);
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.red { background-color: #ef4444; }
+.dot.yellow { background-color: #f59e0b; }
+.dot.green { background-color: #10b981; }
+
+.card-title {
+    margin-left: auto;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.project-card p {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.tech-tag {
+    align-self: flex-start;
+    background-color: rgba(128, 128, 128, 0.1);
+    border: 1px solid var(--border-color);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Footer Section */
+footer {
+    background-color: var(--nav-bg);
+    border-top: 2px solid var(--accent-color);
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+footer h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.contact-links {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+}
+
+.contact-links a:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-top: 1.5rem;
+}
+
+/* Responsive Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-bg);
+        border-bottom: 2px solid var(--accent-color);
+        padding: 1.5rem 0;
+        text-align: center;
+        gap: 1.2rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+}
